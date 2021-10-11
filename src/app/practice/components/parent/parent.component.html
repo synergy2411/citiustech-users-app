@@ -1,0 +1,20 @@
+
+<h4>Value from Child : {{ valueFromChild }} </h4>
+
+<h4>Title in Parent : {{ title }} </h4>
+
+<h4>Username in Parent : {{ user.name }} </h4>
+
+<app-child (childEvent)="onValueReceive($event)"
+  [title]="title"
+  [user]="user">
+
+  <header>Header Information</header>
+  <main class="main-content">Main Contents</main>
+  <section id="my-section">My Section</section>
+  <p>Title : {{ title }}</p>
+  <p>Username : {{user.name}} </p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero sapiente error quo quod esse optio aliquid accusantium nisi velit magni,
+    cupiditate earum voluptatem dignissimos vel, totam at minus rerum voluptates?</p>
+  <footer>Footer Information</footer>
+</app-child>

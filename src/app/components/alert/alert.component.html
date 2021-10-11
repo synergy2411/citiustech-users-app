@@ -1,0 +1,15 @@
+
+<div class="backdrop" (click)="onClose()">
+
+  <div class="card alert-msg">
+    <div class="card-body">
+      <!-- <h4 class="text-center">{{ message.status }} - {{ message.statusText }}</h4>
+      <p>Requested URL : {{ message.url }}</p> -->
+       <p class="lead">  {{ message  }} </p>
+      <div class="float-right">
+        <button (click) ="onClose()" class="btn btn-sm btn-danger">Close</button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,43 @@
+
+<!-- <h5 class="text-center">Comment Form</h5> -->
+
+<form #f="ngForm">
+  <!-- Select box for Stars (1-5)-->
+  <div class="form-group">
+  <div class="row">
+    <div class="col-4"><b>Stars : </b> </div>
+    <div class="col-8">
+      <select class="form-control" name="stars" ngModel required>
+        <option *ngFor="let num of numbers" value="{{num + 1}}">{{num + 1}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+  <!-- Textarea for Body -->
+  <div class="form-group">
+  <textarea name="body"
+    class="form-control"
+    ngModel
+    required
+    minlength="10"
+    rows="6"
+    placeholder="write your message here..."></textarea>
+</div>
+  <!-- Input field for Email-->
+  <div class="form-group">
+  <input type="email" email name="author" ngModel required class="form-control" placeholder="example@test.com">
+</div>
+  <!-- 2 Buttons - Add Comment | Reset -->
+  <div class="form-group">
+  <div class="row">
+    <div class="col-6">
+      <button class="btn btn-primary btn-sm btn-block"
+        [disabled]="f.invalid"
+        (click)="onAddItem(f)">Add Comment</button>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-warning btn-sm btn-block" (click)="onReset(f)">Reset</button>
+    </div>
+  </div>
+</div>
+</form>

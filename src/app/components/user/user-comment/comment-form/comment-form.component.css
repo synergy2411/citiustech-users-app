@@ -1,0 +1,23 @@
+.ng-invalid.ng-dirty[name="stars"]{
+  border-bottom: 3px tomato solid;
+}
+
+.ng-valid.ng-dirty[name="stars"]{
+  border-bottom: 3px lightgreen solid;
+}
+
+.ng-invalid.ng-dirty[name="body"]{
+  border-bottom: 3px tomato solid;
+}
+
+.ng-valid.ng-dirty[name="body"]{
+  border-bottom: 3px lightgreen solid;
+}
+
+.ng-invalid.ng-dirty[name="author"]{
+  border-bottom: 3px tomato solid;
+}
+
+.ng-valid.ng-dirty[name="author"]{
+  border-bottom: 3px lightgreen solid;
+}

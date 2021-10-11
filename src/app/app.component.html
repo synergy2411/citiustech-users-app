@@ -1,0 +1,77 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <app-header></app-header>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-danger btn-sm btn-block"
+        *ngIf="isAuthenticated()" (click)="onLogout()">Logout</button>
+    </div>
+  </div>
+
+  <!-- <app-new-employee></app-new-employee> -->
+
+  <!-- <h4>Shared Counter in App Comp : {{ sharedService.sharedCounter }}</h4> -->
+
+  <!-- <app-revise-obs></app-revise-obs> -->
+
+  <app-form-array-demo></app-form-array-demo>
+
+  <router-outlet></router-outlet>
+
+
+<!-- <h5>EMP Counter in App Cmp : {{ getCounter() }} </h5>
+<button class="btn btn-primary" (click)="increase()">App Cmp :  Increase</button> -->
+
+
+  <!-- <app-personal></app-personal> -->
+
+  <!-- <app-new-employee></app-new-employee>
+
+  <app-admin></app-admin> -->
+
+
+  <!--
+<input type="text" [(ngModel)]="title">
+
+<button (click)="showComp=!showComp">Toggle Comp</button>
+
+<app-life-cycle-demo *ngIf="showComp" [title]="title">
+  <h5 #heading>This is projected from Parent</h5>
+</app-life-cycle-demo> -->
+
+  <!-- <app-decorators-demo></app-decorators-demo> -->
+
+  <!-- <app-parent></app-parent> -->
+
+  <!-- <app-attribute-demo></app-attribute-demo> -->
+
+  <!-- <app-structural-demo></app-structural-demo> -->
+
+  <!-- <app-pipe-demo></app-pipe-demo> -->
+
+  <!-- <app-users></app-users> -->
+
+  <!-- <app-login *ngIf="!isAuthenticated()"></app-login>
+
+<app-register *ngIf="!isAuthenticated()"></app-register> -->
+
+  <!-- <app-ctr-one></app-ctr-one> -->
+
+  <!-- <hr> -->
+
+  <!-- <app-ctr-two></app-ctr-two> -->
+
+  <!-- <app-async-demo></app-async-demo> -->
+
+  <!-- <app-observable-demo></app-observable-demo> -->
+
+  <!-- <app-obs-operators-demo></app-obs-operators-demo> -->
+
+  <!-- <app-obs-subjects-demo></app-obs-subjects-demo> -->
+
+  <!-- <button class="btn btn-danger" (click)="onLogout()" *ngIf="isAuthenticated()">Logout</button>
+
+<app-notes *ngIf="isAuthenticated()"></app-notes> -->
+</div>

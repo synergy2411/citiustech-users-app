@@ -1,0 +1,34 @@
+<p class="display-4">Pipe Demo Comp</p>
+
+<h4> Promise Object : {{promise | async}}</h4>
+<h5> Contact Number : {{ contactNumber | nationalCode : "EUR" : true}} </h5>
+
+<hr>
+
+<div class="row">
+  <div class="col-6">
+    <select class="form-control" [(ngModel)]="filteredStatus">
+      <option value="done">Completed</option>
+      <option value="pending">Pending</option>
+    </select>
+  </div>
+  <div class="col-6">
+    <select class="form-control" [(ngModel)]="sortOrder">
+      <option value="ASC">By Ascending</option>
+      <option value="DESC">By Descending</option>
+    </select>
+  </div>
+</div>
+<br><br>
+<button class="btn btn-primary" (click)="onAddItem()">Add New Item</button>
+<ul class="list-group">
+  <li class="list-group-item"
+    *ngFor="let todo of todoCollection| filter: filteredStatus | sort : sortOrder">
+    <p class="lead">
+      {{ todo.label | titlecase}}
+      <span class="badge badge-success float-right">
+        {{ todo.status }}
+      </span>
+    </p>
+  </li>
+</ul>

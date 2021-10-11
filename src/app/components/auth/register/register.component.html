@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="text-center">Register Form</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <form [formGroup]="registerForm">
+              <!-- Username field -->
+              <div class="form-group">
+                <label for="username">Username : </label>
+                <input type="text"
+                  name="username"
+                  class="form-control"
+                  [formControl]="username">
+
+                  <div [hidden]="username.valid || username.untouched">
+                    <div [hidden]="!username.hasError('required')" class="alert alert-danger">
+                      <p>* Username is mandatory field</p>
+                    </div>
+                    <div [hidden]="!username.hasError('email')" class="alert alert-danger">
+                      <p>* Username should be in proper email format</p>
+                    </div>
+                  </div>
+              </div>
+              <!-- Password Field -->
+              <div class="form-group">
+                <label for="password">Password : </label>
+                <input type="password"
+                  name="password"
+                  class="form-control"
+                  [formControl]="password">
+                  <div [hidden]="password.valid || password.untouched">
+                    <div [hidden]="!password.hasError('required')" class="alert alert-danger">
+                      <p>* Password is mandatory field</p>
+                    </div>
+                    <div [hidden]="!password.hasError('minlength')" class="alert alert-danger">
+                      <p>* Password must have 6 characters at least.</p>
+                    </div>
+                    <div [hidden]="!password.hasError('exclamationError')" class="alert alert-danger">
+                      <p>* Password must contain Exclamation mark.</p>
+                    </div>
+                  </div>
+              </div>
+
+              <!-- Select drop/down -->
+              <div class="row">
+                <div class="col-4"><b>Country : </b></div>
+                <div class="col-8">
+                  <select name="countries" formControlName="country" class="form-control">
+                    <option *ngFor="let country of countries" value="{{country}}">
+                      {{ country | uppercase }} </option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Radio button -->
+              <div class="form-group">
+                <b>Select Role :</b>
+              <div class="form-check">
+                <input type="radio" name="role"
+                  class="form-check-input"
+                  id="admin"
+                  value="admin"
+                  formControlName="role">
+                <label for="admin">Admin</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" name="role"
+                  class="form-check-input"
+                  id="employee"
+                  value="employee"
+                  formControlName="role">
+                <label for="employee">Employee</label>
+              </div>
+            </div>
+
+
+            <!-- Checkbox -->
+            <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="tnc" id="tnc" formControlName="tnc">
+              <label for="tnc" class="form-check-label">I agree with T&C</label>
+            </div>
+          </div>
+
+              <!-- Buttons -->
+              <div class="row">
+                <div class="col-6">
+                  <button class="btn btn-primary btn-block"
+                    (click)="onRegister()">Register</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-danger btn-block"
+                   (click)="shouldLeave()">Reset</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

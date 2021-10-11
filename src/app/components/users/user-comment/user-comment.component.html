@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-sm-10 col-md-8 offset-sm-1 offset-md-2">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" (click)="tab = 1">Comments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="tab = 2">Add Comments</a>
+      </li>
+      <li class="nav-item">
+        <!-- <a class="nav-link" (click)="tab = 3">Description</a> -->
+      </li>
+    </ul>
+
+    <div [ngSwitch]="tab">
+      <div *ngSwitchCase="1">
+        <div *ngIf="comments.length > 0; else noCommentTemplate">
+          <ul class="list-group">
+            <li
+              class="list-group-item"
+              *ngFor="let comment of comments"
+            >
+              <b>Stars : {{ comment.stars }}</b>
+              <blockquote>{{comment.body}} <cite class="float-right">-{{comment.author}}</cite> </blockquote>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div *ngSwitchCase="2">
+        <app-comment-form (commentEvent)="onAddItem($event)"></app-comment-form>
+      </div>
+      <div *ngSwitchCase="3">Upcoming description</div>
+      <div *ngSwitchDefault>Default Value</div>
+    </div>
+
+    <ng-template #noCommentTemplate>
+      <p>Be the first to comment!</p>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+
+<h4 *appUnless="true">This will be dynamic content</h4>
+
+<ng-template [appUnless]="false" []="">
+  <h4>This will be dynamic content - revised</h4>
+</ng-template>
+
+<div *delayBy="3000">
+  <p>This is cool paragraph</p>
+</div>
+
+

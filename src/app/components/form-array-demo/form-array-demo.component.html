@@ -1,0 +1,41 @@
+<p>form-array-demo works!</p>
+
+<button class="btn btn-primary" (click)="onAddItem()">Add Item</button>
+
+<ng-container *ngFor="let control of courses.controls; index as i;">
+  <input type="text" [formControl]="courses.controls[i]">
+</ng-container>
+<br>
+{{ courses.value | json }}
+
+<hr>
+
+<button class="btn btn-success" (click)="addHobby()">Add Hobby</button>
+<ng-container *ngFor="let hobby of hobbies.controls">
+  <div [formGroup]="hobby">
+    <input type="text" formControlName="hobbyName">
+
+    <select formControlName="hobbyLevel">
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+
+  </div>
+</ng-container>
+{{ hobbies.value | json }}
+
+<hr>
+
+<form [formGroup]="myForm">
+  <div class="form-group">
+    Username : <input type="text" formControlName="username"> <br>
+    Password : <input type="text" formControlName="password"> <br>
+    <button (click)="addRole()">Add New Role</button>
+    <ng-container *ngFor="let control of roles.controls; index as i">
+      <input type="text" [formControl]="roles.controls[i]">
+    </ng-container>
+  </div>
+</form>
+
+{{ roles.value | json }}

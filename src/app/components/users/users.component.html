@@ -1,0 +1,40 @@
+
+<app-alert *ngIf="showAlert"
+  [message] = "errorMessage"
+  (closeEvent)="onCloseAlert($event)"></app-alert>
+
+  <!-- <h4>Show Alert : {{ showAlert }} </h4> -->
+
+<div class="container">
+  <h5>Users component loaded successfully.</h5>
+
+  <!-- {{ users | json }} -->
+
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let user of users; index as idx; first as isFirst; even as isEven"
+      [ngClass]="{'my-background' : isEven}"
+    >
+      <!-- <h5>Index : {{ idx }}</h5>
+      <h5>Is this first Element : {{ isFirst }}</h5>
+      <h5>Is this Even : {{ isEven }}</h5> -->
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <!-- UserImage Comp -->
+          <app-user-image
+            [user]="user"
+            (childEvent)="onMoreInfo($event)"
+          ></app-user-image>
+        </div>
+        <div class="col-md-9 col-sm-9">
+          <!-- UserInfo Comp -->
+          <app-user-info [user]="user"></app-user-info>
+        </div>
+      </div>
+      <hr />
+      <app-user-comment [comments]="user.comments"></app-user-comment>
+
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,33 @@
+
+<div class="container">
+
+  <h4>Title in Child : {{ title }} </h4>
+  <input type="text" [(ngModel)]="title">
+
+  <br>
+
+  <hr>
+  <h4>USername in Child : {{user.name}}</h4>
+  <input type="text" [(ngModel)]="user.name">
+
+
+  <hr>
+
+<ng-content select="header"></ng-content>
+
+<p>child works!</p>
+
+<!-- <ng-content select=".main-content"></ng-content> -->
+
+<ng-content select="#my-section"></ng-content>
+
+<ng-content></ng-content>
+
+<!-- <input type="text" (input)="onChangeValue($event.target.value)"> -->
+<!-- <input type="text" (input)="onChangeValue()" [(ngModel)]="value"> -->
+
+<input type="text" (input)="onChangeValue(input)" #input >
+
+<ng-content select="footer"></ng-content>
+
+</div>

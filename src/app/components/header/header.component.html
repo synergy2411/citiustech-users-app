@@ -1,0 +1,27 @@
+<!-- <ul class="nav nav-tabs justify-content-end">
+
+  <li *ngFor="let link of userLinks" class="nav-item">
+    <a class="nav-link" [routerLink]="[link]">{{link | titlecase}}</a>
+  </li>
+
+</ul> -->
+<ul class="nav nav-tabs justify-content-end">
+  <li class="nav-item" *ngIf="!isAuthenticated()">
+    <a class="nav-link" [routerLink]="['login']">Login</a>
+  </li>
+  <li class="nav-item" *ngIf="!isAuthenticated()">
+    <a class="nav-link" [routerLink]="['register']">Register</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['users']">Users</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['notes']">Notes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['products']">Products</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['lazy']">Lazy</a>
+  </li>
+</ul>

@@ -1,0 +1,15 @@
+<p class="display-4">Observable Demo</p>
+
+<h4>Check Console</h4>
+
+<button (click)="onSubscribe()" class="btn btn-primary">Subscribe</button>
+<button (click)="onUnsubscribe()" class="btn btn-dark">Unsubscribe</button>
+
+
+<hr>
+
+<ul>
+  <li *ngFor="let pkg of packages">
+    {{pkg}}
+  </li>
+</ul>

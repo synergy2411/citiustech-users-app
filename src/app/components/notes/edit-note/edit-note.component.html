@@ -1,0 +1,34 @@
+<div class="backdrop">
+  <div class="row my-form">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="text-center">{{note.title | uppercase}}</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+            <input type="text" name="body" class="form-control" [(ngModel)]="note.body">
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+                <button
+                  (click)="onEdit(note)"
+                  class="btn btn-dark btn-block btn-sm">Edit</button>
+              </div>
+              <div class="col-6">
+                <button
+                  (click)="onDelete(note)"
+                  class="btn btn-danger btn-block btn-sm">Delete</button>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
